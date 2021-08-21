@@ -4,7 +4,56 @@ body {
     font-family: montserrat;
 }
 
+header {
+    margin: 1rem;
+}
 
-.icon {
-    font-size: 20px;
+main {
+    margin: 1rem;
+}
+
+footer {
+    text-align: center;
+    font-size: large;
+    margin: 1rem;
+}
+
+.nav {
+    text-align: left;
+    padding: 2rem;
+}
+
+
+.logo {
+    font-size: 40px;
+    text-align: left;
+    padding: 2rem;
+}
+
+.period-label {
+    box-shadow: 1px 2px;
+    border: solid 1px black;
+    margin-right: 1rem;
+}
+
+.period li {
+    list-style-type: none;
+    display: inline;
+    padding: 1rem;
+}
+
+.channels {
+    width: 160px;
+    margin: 1rem;
+}
+
+.graph {
+    height: 400px; 
+    padding: 1.5rem;
+}
+
+/**wrappers**/
+
+.graphs-wrapper {
+    margin: 2rem 0;
 }

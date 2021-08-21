@@ -6,32 +6,161 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
     rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="main.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>BOO Social Performance</title>
 </head>
 <body>
-    <header>Logo + hamburger icon
-        <div class="icon">Icon</div>
-        <div class=logo>Bridge of Orchy Social Performance</div>
+    <header>
+        <div class="row">
+            <div class="nav col-2"><img src="Assets/Pictures/Hamburger_icon.svg.png" height="50px"; width="50px"></div>
+            <div class="logo col-10">Bridge of Orchy Hotel Social Performance</div>
+        </div>
     </header>
     <main>
-        <div class="parameters">
-            <div class="period">
-                <div>30 days</div>
-                <div>3 months</div>
-                <div>1 year</div>
-                <div>All</div>
+        <div class="parameters row">
+            <div class="period col-xl-6 col-lg-12">
+                <ul>   
+                    <li class="dropdown period-label">Period:</li>
+                    <li><a href="#">30 days</a></li>
+                    <li><a href="#">3 months</a></li>
+                    <li><a href="#">1 year</a></li>
+                    <li><a href="#">All</a></li>
+                </ul>
             </div>
-            <div>Channels</div>
+            <div class="dropdown col-xl-6 col-lg-12">
+                <button class="dropdown-toggle channels" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Channels
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">All</a></li>
+                  <li><a class="dropdown-item" href="#">Facebook</a></li>
+                  <li><a class="dropdown-item" href="#">Twitter</a></li>
+                  <li><a class="dropdown-item" href="#">Instagram</a></li>
+                  <li><a class="dropdown-item" href="#">Mailchimp</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="graphs">
-            <div id="FB">FB</div>
-            <div id="Twitter">Twitter</div>
-            <div id="Intagram">Instagram</div>
-            <div id="Mailchimp">Mailchimp</div>
+        <div class="graphs-wrapper">
+            <div class="row">
+            <div class="graph col-xl-6 col-lg-12" id="FB">
+                <canvas id="myChartFB" style="width:100%;max-width:700px"></canvas>
+            </div>
+            <div class="graph col-xl-6 col-lg-12" id="Twitter">
+                <canvas id="myChartTwitter" style="width:100%;max-width:700px"></canvas>
+                
+            </div>
+            <div class="graph col-xl-6 col-lg-12" id="Intagram">
+                <canvas id="myChartInstagram" style="width:100%;max-width:700px"></canvas>
+            </div>
+            <div class="graph col-xl-6 col-lg-12" id="Mailchimp">
+                <canvas id="myChartMailchimp" style="width:100%;max-width:700px"></canvas>
+            </div>
         </div>
+        </div>
+        <script>
+            var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+            var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+            
+            new Chart("myChartFB", {
+              type: "line",
+              data: {
+                labels: xValues,
+                datasets: [{
+                  fill: false,
+                  lineTension: 0,
+                  backgroundColor: "rgba(0,0,255,1.0)",
+                  borderColor: "rgba(0,0,255,0.1)",
+                  data: yValues
+                }]
+              },
+              options: {
+                legend: {display: false},
+                scales: {
+                  yAxes: [{ticks: {min: 6, max:16}}],
+                }
+              }
+            });
+            </script>
+            <script>
+                var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+                var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+                
+                new Chart("myChartTwitter", {
+                  type: "line",
+                  data: {
+                    labels: xValues,
+                    datasets: [{
+                      fill: false,
+                      lineTension: 0,
+                      backgroundColor: "rgba(0,0,255,1.0)",
+                      borderColor: "rgba(0,0,255,0.1)",
+                      data: yValues
+                    }]
+                  },
+                  options: {
+                    legend: {display: false},
+                    scales: {
+                      yAxes: [{ticks: {min: 6, max:16}}],
+                    }
+                  }
+                });
+                </script>
+                  <script>
+                    var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+                    var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+                    
+                    new Chart("myChartInstagram", {
+                      type: "line",
+                      data: {
+                        labels: xValues,
+                        datasets: [{
+                          fill: false,
+                          lineTension: 0,
+                          backgroundColor: "rgba(0,0,255,1.0)",
+                          borderColor: "rgba(0,0,255,0.1)",
+                          data: yValues
+                        }]
+                      },
+                      options: {
+                        legend: {display: false},
+                        scales: {
+                          yAxes: [{ticks: {min: 6, max:16}}],
+                        }
+                      }
+                    });
+                    </script>
+                      <script>
+                        var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+                        var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+                        
+                        new Chart("myChartMailchimp", {
+                          type: "line",
+                          data: {
+                            labels: xValues,
+                            datasets: [{
+                              fill: false,
+                              lineTension: 0,
+                              backgroundColor: "rgba(0,0,255,1.0)",
+                              borderColor: "rgba(0,0,255,0.1)",
+                              data: yValues
+                            }]
+                          },
+                          options: {
+                            legend: {display: false},
+                            scales: {
+                              yAxes: [{ticks: {min: 6, max:16}}],
+                            }
+                          }
+                        });
+                        </script>
     </main>
-    <footer>Copyright 2021</footer>
+    <footer>
+        <div class="row">
+            <div class="col center">Copyright 2021</div></footer>
     
 </body>
 </html>
