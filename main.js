@@ -12,3 +12,14 @@ new Chart("myChartTwitter", {
     }]
   },
 });
+
+function graphChannels() {
+    var x = document.getElementById("FB");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+}
+
