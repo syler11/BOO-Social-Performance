@@ -13,13 +13,72 @@ new Chart("myChartTwitter", {
   },
 });
 
+
 function graphChannels() {
-    var x = document.getElementById("FB");
-    if (x.style.display === "none") {
-      x.style.display = "block";
+    const FB = document.getElementById("FB");
+    const Twitter = document.getElementById("Twitter");
+    const Instagram = document.getElementById("Instagram");
+    const Mailchimp = document.getElementById("Mailchimp");
+    if (FB.style.display === "none") {
+      FB.style.display = "block";
+      Twitter.style.display = "block";
     } else {
-      x.style.display = "none";
+      FB.style.display = "none";
     }
   }
-}
 
+  function Facebook() {
+    const FB = document.getElementById("FB");
+    const Twitter = document.getElementById("Twitter");
+    const Instagram = document.getElementById("Instagram");
+    const Mailchimp = document.getElementById("Mailchimp");
+    if (FB.style.display === "none") {
+      FB.style.display = "block";
+    } else {
+      Twitter.style.display = "none";
+      Instagram.style.display = "none";
+      Mailchimp.style.display = "none";
+    }
+  }
+
+  function Twitter() {
+    const FB = document.getElementById("FB");
+    const Twitter = document.getElementById("Twitter");
+    const Instagram = document.getElementById("Instagram");
+    const Mailchimp = document.getElementById("Mailchimp");
+    if (Twitter.style.display === "none") {
+      Twitter.style.display = "block";
+    } else {
+      FB.style.display = "none";
+      Instagram.style.display = "none";
+      Mailchimp.style.display = "none";
+    }
+  }
+
+  function Instagram() {
+    const FB = document.getElementById("FB");
+    const Twitter = document.getElementById("Twitter");
+    const Instagram = document.getElementById("Instagram");
+    const Mailchimp = document.getElementById("Mailchimp");
+    if (Instagram.style.display === "none") {
+      Instagram.style.display = "block";
+    } else {
+      FB.style.display = "none";
+      Twitter.style.display = "none";
+      Mailchimp.style.display = "none";
+    }
+  }
+
+  function Mailchimp() {
+    const FB = document.getElementById("FB");
+    const Twitter = document.getElementById("Twitter");
+    const Instagram = document.getElementById("Instagram");
+    const Mailchimp = document.getElementById("Mailchimp");
+    if (Mailchimp.style.display === "none") {
+      Mailchimp.style.display = "block";
+    } else {
+      FB.style.display = "none";
+      Twitter.style.display = "none";
+      Instagram.style.display = "none";
+    }
+  }

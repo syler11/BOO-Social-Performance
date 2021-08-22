@@ -36,27 +36,31 @@
                   Channels
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#"><button onclick="graphChannels()">All</button></a></li>
-                  <li><a class="dropdown-item" href="#">Facebook</a></li>
-                  <li><a class="dropdown-item" href="#">Twitter</a></li>
-                  <li><a class="dropdown-item" href="#">Instagram</a></li>
-                  <li><a class="dropdown-item" href="#">Mailchimp</a></li>
+                  <li><a class="dropdown-item" href="#"><div onclick="graphChannels()">All</div></a></li>
+                  <li><a class="dropdown-item" href="#"><div onclick="Facebook()">Facebook</div></a></li>
+                  <li><a class="dropdown-item" href="#"><div onclick="Twitter()">Twitter</div></a></li>
+                  <li><a class="dropdown-item" href="#"><div onclick="Instagram()">Instagram</div></a></li>
+                  <li><a class="dropdown-item" href="#"><div onclick="Mailchimp()">Mailchimp</div></a></li>
                 </ul>
             </div>
         </div>
         <div class="graphs-wrapper">
             <div class="row">
             <div class="graph col-xl-6 col-lg-12" id="FB">
+                <div>Facebook</div>
                 <canvas id="myChartFB" style="width:100%;max-width:700px"></canvas>
             </div>
             <div class="graph col-xl-6 col-lg-12" id="Twitter">
+                <div>Twitter</div>
                 <canvas id="myChartTwitter" style="width:100%;max-width:700px"></canvas>
                 
             </div>
-            <div class="graph col-xl-6 col-lg-12" id="Intagram">
+            <div class="graph col-xl-6 col-lg-12" id="Instagram">
+                <div>Instagram</div>
                 <canvas id="myChartInstagram" style="width:100%;max-width:700px"></canvas>
             </div>
             <div class="graph col-xl-6 col-lg-12" id="Mailchimp">
+                <div>Mailchimp</div>
                 <canvas id="myChartMailchimp" style="width:100%;max-width:700px"></canvas>
             </div>
         </div>
