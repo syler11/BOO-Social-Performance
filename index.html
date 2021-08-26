@@ -16,7 +16,13 @@
 <body>
     <header>
         <div class="row">
-            <div class="nav col-2"><img src="Assets/Pictures/Hamburger_icon.svg.png" height="50px"; width="50px"></div>
+          <div class="nav col-2"><div type="button" data-bs-toggle="dropdown"><img src="Assets/Pictures/Hamburger_icon.svg.png" height="50px"; width="50px"></div>
+            <ul class="dropdown-menu nav-dropdown" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item nav-link"  href="index.html">Dashboard</a></li>
+              <li><a class="dropdown-item nav-link" href="#">Data</a></li>
+              <li><a class="dropdown-item nav-link" href="#">Report an issue</a></li>
+            </ul>
+          </div>
             <div class="logo col-10">Bridge of Orchy Hotel Social Performance</div>
         </div>
     </header>
@@ -48,26 +54,26 @@
             <div class="row">
             <div class="graph col-xl-6 col-lg-12" id="FB">
                 <div>Facebook</div>
-                <canvas id="myChartFB" style="width:100%;max-width:700px"></canvas>
+                <canvas id="myChartFB" style="width:100%;max-width:800px"></canvas>
             </div>
             <div class="graph col-xl-6 col-lg-12" id="Twitter">
                 <div>Twitter</div>
-                <canvas id="myChartTwitter" style="width:100%;max-width:700px"></canvas>
+                <canvas id="myChartTwitter" style="width:100%;max-width:800px"></canvas>
                 
             </div>
             <div class="graph col-xl-6 col-lg-12" id="Instagram">
                 <div>Instagram</div>
-                <canvas id="myChartInstagram" style="width:100%;max-width:700px"></canvas>
+                <canvas id="myChartInstagram" style="width:100%;max-width:800px"></canvas>
             </div>
             <div class="graph col-xl-6 col-lg-12" id="Mailchimp">
                 <div>Mailchimp</div>
-                <canvas id="myChartMailchimp" style="width:100%;max-width:700px"></canvas>
+                <canvas id="myChartMailchimp" style="width:100%;max-width:800px"></canvas>
             </div>
         </div>
         </div>
         <script>
-            var xValues = [50,60,70,80,90,100,110,120,130,140,150];
-            var yValues = [7,8,8,9,9,9,10,11,14,14,15];
+             var xValues = [50,60,70,80,90,100,110,120,130,140,150];
+                var yValues = [7,8,8,9,9,9,10,11,14,14,15];
             
             new Chart("myChartFB", {
               type: "line",
@@ -164,7 +170,7 @@
     </main>
     <footer>
         <div class="row">
-            <div class="col center">Copyright 2021</div></footer>
+            <div class="col center">Copyright Syler Softwares 2021</div></footer>
     
 </body>
 </html>
