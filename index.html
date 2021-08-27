@@ -7,14 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-  <script src="main.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>BOO Social Performance</title>
 </head>
@@ -31,7 +30,7 @@
           <li><a class="dropdown-item nav-link" href="#">Report an issue</a></li>
         </ul>
       </div>
-      <div class="logo col-10">Bridge of Orchy Hotel Social Performance</div>
+      <div class="logo col-9">Bridge of Orchy Hotel Social Performance</div>
     </div>
   </header>
   <main>
@@ -45,30 +44,31 @@
           <li><a href="#">All</a></li>
         </ul>
       </div>
-      <div class="dropdown col-xl-6 col-lg-12">
+      <div class="dropdown col-xl-3 col-lg-9">
         <button class="dropdown-toggle channels" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-          aria-expanded="false">
-          Channels
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-          <li><a class="dropdown-item" href="#">
-              <div onclick="graphChannels()">All</div>
-            </a></li>
-          <li><a class="dropdown-item" href="#">
-              <div onclick="Facebook()">Facebook</div>
-            </a></li>
-          <li><a class="dropdown-item" href="#">
-              <div onclick="Twitter()">Twitter</div>
-            </a></li>
-          <li><a class="dropdown-item" href="#">
-              <div onclick="Instagram()">Instagram</div>
-            </a></li>
-          <li><a class="dropdown-item" href="#">
-              <div onclick="Mailchimp()">Mailchimp</div>
-            </a></li>
-        </ul>
-      </div>
+        aria-expanded="false">
+        Channels
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><a class="dropdown-item" href="#">
+          <div onclick="graphChannels()">All</div>
+        </a></li>
+        <li><a class="dropdown-item" href="#">
+          <div onclick="Facebook()">Facebook</div>
+        </a></li>
+        <li><a class="dropdown-item" href="#">
+          <div onclick="Twitter()">Twitter</div>
+        </a></li>
+        <li><a class="dropdown-item" href="#">
+          <div onclick="Instagram()">Instagram</div>
+        </a></li>
+        <li><a class="dropdown-item" href="#">
+          <div onclick="Mailchimp()">Mailchimp</div>
+        </a></li>
+      </ul>
     </div>
+    <div class="period col-3"><p id="test">0</p></div>
+  </div>
     <div class="graphs-wrapper">
       <div class="row">
         <div class="graph col-xl-6 col-lg-12" id="FB">
@@ -78,10 +78,10 @@
         <div class="graph col-xl-6 col-lg-12" id="Twitter">
           <div>Twitter live count: <span class="liveCount" id="twitterCount">1991</span></div>
           <canvas id="myChartTwitter" style="width:100%;max-width:800px"></canvas>
-          
+
         </div>
         <div class="graph col-xl-6 col-lg-12" id="Instagram">
-          <div>Instgram live count: <span class="liveCount" id="instagramCount">1787</span></div>
+          <div>Instagram live count: <span class="liveCount" id="instagramCount">1787</span></div>
           <canvas id="myChartInstagram" style="width:100%;max-width:800px"></canvas>
         </div>
         <div class="graph col-xl-6 col-lg-12" id="Mailchimp">
@@ -90,13 +90,12 @@
         </div>
       </div>
     </div>
-    
-    <script>
 
+    <script>
       var myCanvasFB = document.getElementById("myChartFB");
       var ctxFB = myCanvasFB.getContext('2d');
-      
-            var myChartTwitter = new Chart(ctxFB, {
+
+      var myChartTwitter = new Chart(ctxFB, {
         type: 'line',
         data: {
           labels: ["2021-03-11", "2021-04-25"],
@@ -132,18 +131,17 @@
           scales: {
             xAxes: [{
               type: 'time',
-              distribution: 'series'
+              distribution: 'linear'
             }]
           }
         }
       });
-          </script>
+    </script>
     <script>
-
       var myCanvasTwitter = document.getElementById("myChartTwitter");
       var ctxTwitter = myCanvasTwitter.getContext('2d');
-      
-            var myChartTwitter = new Chart(ctxTwitter, {
+
+      var myChartTwitter = new Chart(ctxTwitter, {
         type: 'line',
         data: {
           labels: ["2021-03-11", "2021-04-25"],
@@ -184,13 +182,13 @@
           }
         }
       });
-          </script>
+    </script>
     <script>
 
       var myCanvasInstagram = document.getElementById("myChartInstagram");
       var ctxInstagram = myCanvasInstagram.getContext('2d');
-      
-            var myChartTwitter = new Chart(ctxInstagram, {
+
+      var myChartTwitter = new Chart(ctxInstagram, {
         type: 'line',
         data: {
           labels: ["2021-03-11", "2021-04-25"],
@@ -236,8 +234,8 @@
 
       var myCanvasMailchimp = document.getElementById("myChartMailchimp");
       var ctxMailchimp = myCanvasMailchimp.getContext('2d');
-      
-            var myChartTwitter = new Chart(ctxMailchimp, {
+
+      var myChartTwitter = new Chart(ctxMailchimp, {
         type: 'line',
         data: {
           labels: ["2021-03-11", "2021-04-25"],
@@ -279,30 +277,6 @@
         }
       });
     </script>
-    <!-- <script>
-      var xValues = [55, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 200];
-      var yValues = [3, 7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15, 20];
-
-      new Chart("myChartMailchimp", {
-        type: "line",
-        data: {
-          labels: xValues,
-          datasets: [{
-            fill: false,
-            lineTension: 0,
-            backgroundColor: "rgba(0,0,255,1.0)",
-            borderColor: "rgba(0,0,255,0.1)",
-            data: yValues
-          }]
-        },
-        options: {
-          legend: { display: false },
-          scales: {
-            yAxes: [{ ticks: { min: Math.min.apply(Math, yValues) - 1, max: Math.max.apply(Math, yValues) + 3 } }],
-          }
-        }
-      });
-    </script> -->
   </main>
   <footer>
     <div class="row">
@@ -310,5 +284,5 @@
   </footer>
 
 </body>
-
+<script src="main.js"></script>
 </html>

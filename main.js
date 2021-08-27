@@ -1,3 +1,10 @@
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = mm + '/' + dd + '/' + yyyy;
+document.getElementById('test').innerHTML=(today);
 
 
 function graphChannels() {
@@ -6,9 +13,9 @@ function graphChannels() {
     const Instagram = document.getElementById("Instagram");
     const Mailchimp = document.getElementById("Mailchimp");
     if ( FB.style.display === "none",
-        Twitter.style.display === "none",
-        Instagram.style.display ==="none",
-        Mailchimp.style.display === "none") {
+        Twitter.style.display = "block",
+        Instagram.style.display = "block",
+        Mailchimp.style.display = "block") {
       FB.style.display = "block";
       Twitter.style.display = "block";
       Instagram.style.display = "block";
