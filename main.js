@@ -1,3 +1,5 @@
+
+
 function graphChannels() {
     const FB = document.getElementById("FB");
     const Twitter = document.getElementById("Twitter");
