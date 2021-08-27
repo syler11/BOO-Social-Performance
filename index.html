@@ -72,20 +72,20 @@
     <div class="graphs-wrapper">
       <div class="row">
         <div class="graph col-xl-6 col-lg-12" id="FB">
-          <div>Facebook</div>
+          <div>Facebook live count: <span class="liveCount" id="fbCount">2256</span></div>
           <canvas id="myChartFB" style="width:100%;max-width:800px"></canvas>
         </div>
         <div class="graph col-xl-6 col-lg-12" id="Twitter">
-          <div>Twitter</div>
+          <div>Twitter live count: <span class="liveCount" id="twitterCount">1991</span></div>
           <canvas id="myChartTwitter" style="width:100%;max-width:800px"></canvas>
-
+          
         </div>
         <div class="graph col-xl-6 col-lg-12" id="Instagram">
-          <div>Instagram</div>
+          <div>Instgram live count: <span class="liveCount" id="instagramCount">1787</span></div>
           <canvas id="myChartInstagram" style="width:100%;max-width:800px"></canvas>
         </div>
         <div class="graph col-xl-6 col-lg-12" id="Mailchimp">
-          <div>Mailchimp</div>
+          <div>Mailchimp live count: <span class="liveCount" id="mailchimpCount">9089</span></div>
           <canvas id="myChartMailchimp" style="width:100%;max-width:800px"></canvas>
         </div>
       </div>
@@ -132,7 +132,7 @@
           scales: {
             xAxes: [{
               type: 'time',
-              distribution: 'linear'
+              distribution: 'series'
             }]
           }
         }
@@ -187,30 +187,99 @@
           </script>
     <script>
 
-      var xValues = [55, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 200];
-      var yValues = [3, 7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15, 20];
-
-      new Chart("myChartInstagram", {
-        type: "line",
+      var myCanvasInstagram = document.getElementById("myChartInstagram");
+      var ctxInstagram = myCanvasInstagram.getContext('2d');
+      
+            var myChartTwitter = new Chart(ctxInstagram, {
+        type: 'line',
         data: {
-          labels: xValues,
+          labels: ["2021-03-11", "2021-04-25"],
           datasets: [{
-            fill: false,
-            lineTension: 0,
-            backgroundColor: "rgba(0,0,255,1.0)",
-            borderColor: "rgba(0,0,255,0.1)",
-            data: yValues
+            label: 'Instagram',
+            data: [{
+              t: "2021-03-11",
+              y: 1623
+            },
+            {
+              t: "2021-03-18",
+              y: 1652
+            },
+            {
+              t: "2021-03-25",
+              y: 1720
+            },
+            {
+              t: "2021-04-25",
+              y: 1787
+            }
+            ],
+            backgroundColor: [
+              'rgba(193, 53, 132, 0.2)'
+            ],
+            borderColor: [
+              'rgba(193, 53, 132, 1)',
+            ],
+            borderWidth: 5
           }]
         },
         options: {
-          legend: { display: false },
           scales: {
-            yAxes: [{ ticks: { min: 6, max: 16 } }],
+            xAxes: [{
+              type: 'time',
+              distribution: 'linear'
+            }]
           }
         }
       });
     </script>
     <script>
+
+      var myCanvasMailchimp = document.getElementById("myChartMailchimp");
+      var ctxMailchimp = myCanvasMailchimp.getContext('2d');
+      
+            var myChartTwitter = new Chart(ctxMailchimp, {
+        type: 'line',
+        data: {
+          labels: ["2021-03-11", "2021-04-25"],
+          datasets: [{
+            label: 'Mailchimp',
+            data: [{
+              t: "2021-03-11",
+              y: 8600
+            },
+            {
+              t: "2021-03-18",
+              y: 8625
+            },
+            {
+              t: "2021-03-25",
+              y: 8910
+            },
+            {
+              t: "2021-04-25",
+              y: 9051
+            }
+            ],
+            backgroundColor: [
+              'rgba(255, 224, 27, 0.2)'
+            ],
+            borderColor: [
+              'rgba(255, 224, 27, 1)',
+            ],
+            borderWidth: 5
+          }]
+        },
+        options: {
+          scales: {
+            xAxes: [{
+              type: 'time',
+              distribution: 'linear'
+            }]
+          }
+        }
+      });
+    </script>
+    <!-- <script>
       var xValues = [55, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 200];
       var yValues = [3, 7, 8, 8, 9, 9, 9, 10, 11, 14, 14, 15, 20];
 
@@ -233,7 +302,7 @@
           }
         }
       });
-    </script>
+    </script> -->
   </main>
   <footer>
     <div class="row">

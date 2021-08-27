@@ -61,6 +61,11 @@ footer {
     margin: 1rem;
 }
 
+.liveCount {
+    font-size: large;
+    font-weight: 600;
+}
+
 .graph {
     height: 400px; 
     padding: 1.5rem;
