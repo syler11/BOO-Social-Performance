@@ -4,6 +4,11 @@ body {
     font-family: montserrat;
 }
 
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
 header {
     margin: 1rem;
 }
@@ -29,7 +34,7 @@ footer {
     border-radius: 10px;
     font-size: 20px;
     opacity: 0.9;
-    background-color: black;
+    background-color: grey;
     color: white;
 }
 

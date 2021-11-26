@@ -7,13 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"
     integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg=="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>BOO Social Performance</title>
 </head>
@@ -26,11 +28,12 @@
             width="50px"></div>
         <ul class="dropdown-menu nav-dropdown" aria-labelledby="dropdownMenuButton1">
           <li><a class="dropdown-item nav-link" href="index.html">Dashboard</a></li>
-          <li><a class="dropdown-item nav-link" href="#">Data</a></li>
-          <li><a class="dropdown-item nav-link" href="#">Report an issue</a></li>
+          <li><a class="dropdown-item nav-link" href="data.html">Data</a></li>
+          <li><a class="dropdown-item nav-link" href="report.html">Report an issue</a></li>
         </ul>
       </div>
-      <div class="logo col-9">Bridge of Orchy Hotel Social Performance</div>
+      <div class="logo col-9">Bridge of Orchy Hotel Social Media Performance</div>
+      <div id="dark-mode" class="toggle-dark col-1"><button onclick="myFunction()">Dark mode</button></div>
     </div>
   </header>
   <main>
@@ -46,29 +49,31 @@
       </div>
       <div class="dropdown col-xl-3 col-lg-9">
         <button class="dropdown-toggle channels" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-        aria-expanded="false">
-        Channels
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><a class="dropdown-item" href="#">
-          <div onclick="graphChannels()">All</div>
-        </a></li>
-        <li><a class="dropdown-item" href="#">
-          <div onclick="Facebook()">Facebook</div>
-        </a></li>
-        <li><a class="dropdown-item" href="#">
-          <div onclick="Twitter()">Twitter</div>
-        </a></li>
-        <li><a class="dropdown-item" href="#">
-          <div onclick="Instagram()">Instagram</div>
-        </a></li>
-        <li><a class="dropdown-item" href="#">
-          <div onclick="Mailchimp()">Mailchimp</div>
-        </a></li>
-      </ul>
+          aria-expanded="false">
+          Channels
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li><a class="dropdown-item" href="#">
+              <div onclick="graphChannels()">All</div>
+            </a></li>
+          <li><a class="dropdown-item" href="#">
+              <div onclick="Facebook()">Facebook</div>
+            </a></li>
+          <li><a class="dropdown-item" href="#">
+              <div onclick="Twitter()">Twitter</div>
+            </a></li>
+          <li><a class="dropdown-item" href="#">
+              <div onclick="Instagram()">Instagram</div>
+            </a></li>
+          <li><a class="dropdown-item" href="#">
+              <div onclick="Mailchimp()">Mailchimp</div>
+            </a></li>
+        </ul>
+      </div>
+      <div class="period col-3">
+        <p id="test">0</p>
+      </div>
     </div>
-    <div class="period col-3"><p id="test">0</p></div>
-  </div>
     <div class="graphs-wrapper">
       <div class="row">
         <div class="graph col-xl-6 col-lg-12" id="FB">
@@ -98,7 +103,7 @@
       var myChartTwitter = new Chart(ctxFB, {
         type: 'line',
         data: {
-          labels: ["2021-03-11", "2021-04-25"],
+          labels: ["2021-03-21", "2021-04-25"],
           datasets: [{
             label: 'Facebook',
             data: [{
@@ -235,10 +240,19 @@
       var myCanvasMailchimp = document.getElementById("myChartMailchimp");
       var ctxMailchimp = myCanvasMailchimp.getContext('2d');
 
+      var today = new Date();
+      var dd = String(today.getDate()).padStart(2, '0');
+      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+      var yyyy = today.getFullYear();
+
+      var date = new Date();
+      date.setDate(date.getDate() - 1);
+
+
       var myChartTwitter = new Chart(ctxMailchimp, {
         type: 'line',
         data: {
-          labels: ["2021-03-11", "2021-04-25"],
+          labels: [date, today],
           datasets: [{
             label: 'Mailchimp',
             data: [{
@@ -285,4 +299,5 @@
 
 </body>
 <script src="main.js"></script>
+
 </html>
