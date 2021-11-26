@@ -15,7 +15,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <link rel="stylesheet" href="Assets/css/style.css">
   <title>BOO Social Performance</title>
 </head>
@@ -23,7 +23,8 @@
 <body>
   <header>
     <div class="row">
-      <div class="nav col-2">
+      <!-- Logo and Dark Mode button -->
+      <!--<div class="nav col-2">
         <div type="button" data-bs-toggle="dropdown"><img src="Assets/Pictures/Hamburger_icon.svg.png" height="50px" ;
             width="50px"></div>
         <ul class="dropdown-menu nav-dropdown" aria-labelledby="dropdownMenuButton1">
@@ -31,14 +32,16 @@
           <li><a class="dropdown-item nav-link" href="data.html">Data</a></li>
           <li><a class="dropdown-item nav-link" href="report.html">Report an issue</a></li>
         </ul>
-      </div>
-      <div class="logo col-9">Bridge of Orchy Hotel Social Media Performance</div>
+      </div> -->
+      <div class="logo col-11">Bridge of Orchy Hotel Social Media Performance</div>
       <div id="dark-mode" class="toggle-dark col-1"><button onclick="myFunction()">Dark mode</button></div>
     </div>
   </header>
   <main>
     <div class="parameters row">
+      <!-- Graphs with channel selector and period selector -->
       <div class="period col-xl-6 col-lg-12">
+        <h2>Graphs</h2>
         <ul>
           <li class="dropdown period-label">Period:</li>
           <li><a href="#">30 days</a></li>
@@ -94,210 +97,380 @@
           <canvas id="myChartMailchimp" style="width:100%;max-width:800px"></canvas>
         </div>
       </div>
+      <hr>
     </div>
 
-    <script>
-      var myCanvasFB = document.getElementById("myChartFB");
-      var ctxFB = myCanvasFB.getContext('2d');
 
-      var myChartTwitter = new Chart(ctxFB, {
-        type: 'line',
-        data: {
-          labels: ["2021-03-21", "2021-04-25"],
-          datasets: [{
-            label: 'Facebook',
-            data: [{
-              t: "2021-03-11",
-              y: 2012
-            },
-            {
-              t: "2021-03-18",
-              y: 2056
-            },
-            {
-              t: "2021-03-25",
-              y: 2122
-            },
-            {
-              t: "2021-04-25",
-              y: 2189
-            }
-            ],
-            backgroundColor: [
-              'rgba(59, 89, 152, 0.2)'
-            ],
-            borderColor: [
-              'rgba(59, 89, 152, 1)',
-            ],
-            borderWidth: 3
-          }]
-        },
-        options: {
-          scales: {
-            xAxes: [{
-              type: 'time',
-              distribution: 'linear'
-            }]
-          }
-        }
-      });
-    </script>
-    <script>
-      var myCanvasTwitter = document.getElementById("myChartTwitter");
-      var ctxTwitter = myCanvasTwitter.getContext('2d');
+    <div class="stats">
+      <!-- Statistics with % counting per periods with color codes (green + & red -) -->
+      <h2>Statistics</h2>
+      <table id="stats">
+        <thead>
+          <tr>
+            <th></th>
+            <th>1w%</th>
+            <th>4w%</th>
+            <th>12w%</th>
+            <th>26w%</th>
+            <th>52w%</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tableDate">Facebook</td>
+            <td id="1wFB">+1.4%</td>
+            <td id="4wFB">+6.8%</td>
+            <td id="12wFB">+19.3%</td>
+            <td id="26wFB">+56.9%</td>
+            <td id="52wFB">+101.2%</td>
+          </tr>
+          <tr>
+            <td class="tableDate">Twitter</td>
+            <td id="1wFB">+1.4%</td>
+            <td id="4wFB">+6.8%</td>
+            <td id="12wFB">+19.3%</td>
+            <td id="26wFB">+56.9%</td>
+            <td id="52wFB">+101.2%</td>
+          </tr>
+          <tr>
+            <td class="tableDate">Instagram</td>
+            <td id="1wFB">+1.4%</td>
+            <td id="4wFB">+6.8%</td>
+            <td id="12wFB">+19.3%</td>
+            <td id="26wFB">+56.9%</td>
+            <td id="52wFB">+101.2%</td>
+          </tr>
+          <tr>
+            <td class="tableDate">Mailchimp</td>
+            <td id="1wFB">+1.4%</td>
+            <td id="4wFB">+6.8%</td>
+            <td id="12wFB">+19.3%</td>
+            <td id="26wFB">+56.9%</td>
+            <td id="52wFB">+101.2%</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+    </div>
 
-      var myChartTwitter = new Chart(ctxTwitter, {
-        type: 'line',
-        data: {
-          labels: ["2021-03-11", "2021-04-25"],
-          datasets: [{
-            label: 'Twitter',
-            data: [{
-              t: "2021-03-11",
-              y: 1985
-            },
-            {
-              t: "2021-03-18",
-              y: 1982
-            },
-            {
-              t: "2021-03-25",
-              y: 1990
-            },
-            {
-              t: "2021-04-25",
-              y: 1999
-            }
-            ],
-            backgroundColor: [
-              'rgba(0, 172, 238, 0.2)'
-            ],
-            borderColor: [
-              'rgba(0, 172, 238, 1)',
-            ],
-            borderWidth: 3
-          }]
-        },
-        options: {
-          scales: {
-            xAxes: [{
-              type: 'time',
-              distribution: 'linear'
-            }]
-          }
-        }
-      });
-    </script>
-    <script>
-
-      var myCanvasInstagram = document.getElementById("myChartInstagram");
-      var ctxInstagram = myCanvasInstagram.getContext('2d');
-
-      var myChartTwitter = new Chart(ctxInstagram, {
-        type: 'line',
-        data: {
-          labels: ["2021-03-11", "2021-04-25"],
-          datasets: [{
-            label: 'Instagram',
-            data: [{
-              t: "2021-03-11",
-              y: 1623
-            },
-            {
-              t: "2021-03-18",
-              y: 1652
-            },
-            {
-              t: "2021-03-25",
-              y: 1720
-            },
-            {
-              t: "2021-04-25",
-              y: 1787
-            }
-            ],
-            backgroundColor: [
-              'rgba(193, 53, 132, 0.2)'
-            ],
-            borderColor: [
-              'rgba(193, 53, 132, 1)',
-            ],
-            borderWidth: 5
-          }]
-        },
-        options: {
-          scales: {
-            xAxes: [{
-              type: 'time',
-              distribution: 'linear'
-            }]
-          }
-        }
-      });
-    </script>
-    <script>
-
-      var myCanvasMailchimp = document.getElementById("myChartMailchimp");
-      var ctxMailchimp = myCanvasMailchimp.getContext('2d');
-
-      var today = new Date();
-      var dd = String(today.getDate()).padStart(2, '0');
-      var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-      var yyyy = today.getFullYear();
-
-      var date = new Date();
-      date.setDate(date.getDate() - 1);
+    <div class="datatable">
+      <!-- Data table with Show and Hide function -->
+      <h2>Source Data</h2>
+      <table id="sourceData">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Facebook</th>
+            <th>Twitter</th>
+            <th>Instagram</th>
+            <th>Mailchimp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tableDate">01/01/21</td>
+            <td class="fbStyle">2012</td>
+            <td class="twitterStyle">2011</td>
+            <td class="instaStyle">707</td>
+            <td class="mailchimpStyle">6666</td>
+          </tr>
+          <tr>
+            <td class="tableDate">01/02/21</td>
+            <td class="fbStyle">2025</td>
+            <td class="twitterStyle">2018</td>
+            <td class="instaStyle">752</td>
+            <td class="mailchimpStyle">6852</td>
+          </tr>
+          <tr>
+            <td class="tableDate">01/03/21</td>
+            <td class="fbStyle">2056</td>
+            <td class="twitterStyle">2035</td>
+            <td class="instaStyle">887</td>
+            <td class="mailchimpStyle">7215</td>
+          </tr>
+          <tr>
+            <td class="tableDate">01/04/21</td>
+            <td class="fbStyle">2102</td>
+            <td class="twitterStyle">2098</td>
+            <td class="instaStyle">937</td>
+            <td class="mailchimpStyle">7856</td>
+          </tr>
+          <tr>
+            <td class="tableDate">01/05/21</td>
+            <td class="fbStyle">2145</td>
+            <td class="twitterStyle">2117</td>
+            <td class="instaStyle">1002</td>
+            <td class="mailchimpStyle">8236</td>
+          </tr>
+          <tr>
+            <td class="tableDate">01/06/21</td>
+            <td class="fbStyle">2012</td>
+            <td class="twitterStyle">2011</td>
+            <td class="instaStyle">707</td>
+            <td class="mailchimpStyle">6666</td>
+          </tr>
+          <tr>
+            <td class="tableDate">01/07/21</td>
+            <td class="fbStyle">2012</td>
+            <td class="twitterStyle">2011</td>
+            <td class="instaStyle">707</td>
+            <td class="mailchimpStyle">6666</td>
+          </tr>
+          <tr>
+            <td class="tableDate">01/08/21</td>
+            <td class="fbStyle">2012</td>
+            <td class="twitterStyle">2011</td>
+            <td class="instaStyle">707</td>
+            <td class="mailchimpStyle">6666</td>
+          </tr>
+          <tr>
+            <td class="tableDate">01/09/21</td>
+            <td class="fbStyle">2012</td>
+            <td class="twitterStyle">2011</td>
+            <td class="instaStyle">707</td>
+            <td class="mailchimpStyle">6666</td>
+          </tr>
+          <tr>
+            <td class="tableDate">Add new</td>
+            <td class="fbStyle">Add new</td>
+            <td class="twitterStyle">Add new</td>
+            <td class="instaStyle">Add new</td>
+            <td class="mailchimpStyle">Add new</td>
+            <td><button>Submit</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+    </div>
 
 
-      var myChartTwitter = new Chart(ctxMailchimp, {
-        type: 'line',
-        data: {
-          labels: [date, today],
-          datasets: [{
-            label: 'Mailchimp',
-            data: [{
-              t: "2021-03-11",
-              y: 8600
-            },
-            {
-              t: "2021-03-18",
-              y: 8625
-            },
-            {
-              t: "2021-03-25",
-              y: 8910
-            },
-            {
-              t: "2021-04-25",
-              y: 9051
-            }
-            ],
-            backgroundColor: [
-              'rgba(255, 224, 27, 0.2)'
-            ],
-            borderColor: [
-              'rgba(255, 224, 27, 1)',
-            ],
-            borderWidth: 5
-          }]
-        },
-        options: {
-          scales: {
-            xAxes: [{
-              type: 'time',
-              distribution: 'linear'
-            }]
-          }
-        }
-      });
-    </script>
+    <!-- Contact form -->
+    <div class="row contact">
+      <h2>Get in touch</h2>
+      <div class="col-12 col-lg-6 contact-form">
+        <form class="sign-up-form">
+          <div class="form-group">
+            <label for="fullname" class="contact-label">Full Name</label>
+            <input type="text" class="form-control" name="fullname" id="fullname" aria-describedby="fullname">
+            <label for="telephone" class="contact-label">Telephone Number</label>
+            <input type="text" class="form-control" name="telephone" id="telephone" aria-describedby="telephone">
+            <label for="emailaddress" class="contact-label">Email address</label>
+            <input type="email" class="form-control" name="emailaddress" id="emailaddress"
+              aria-describedby="emailaddress">
+          </div>
+          <div class="form-group">
+            <label for="messagebox">Message</label>
+            <textarea class="form-control" id="messagebox" rows="6"></textarea>
+            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModal">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+
   </main>
   <footer>
     <div class="row">
       <div class="col center">Copyright Syler Softwares 2021</div>
+    </div>
   </footer>
 
 </body>
+<script>
+  var myCanvasFB = document.getElementById("myChartFB");
+  var ctxFB = myCanvasFB.getContext('2d');
+
+  var myChartTwitter = new Chart(ctxFB, {
+    type: 'line',
+    data: {
+      labels: ["2021-03-21", "2021-04-25"],
+      datasets: [{
+        label: 'Facebook',
+        data: [{
+          t: "2021-03-11",
+          y: 2012
+        },
+        {
+          t: "2021-03-18",
+          y: 2056
+        },
+        {
+          t: "2021-03-25",
+          y: 2122
+        },
+        {
+          t: "2021-04-25",
+          y: 2189
+        }
+        ],
+        backgroundColor: [
+          'rgba(59, 89, 152, 0.2)'
+        ],
+        borderColor: [
+          'rgba(59, 89, 152, 1)',
+        ],
+        borderWidth: 3
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          distribution: 'linear'
+        }]
+      }
+    }
+  });
+</script>
+<script>
+  var myCanvasTwitter = document.getElementById("myChartTwitter");
+  var ctxTwitter = myCanvasTwitter.getContext('2d');
+
+  var myChartTwitter = new Chart(ctxTwitter, {
+    type: 'line',
+    data: {
+      labels: ["2021-03-11", "2021-04-25"],
+      datasets: [{
+        label: 'Twitter',
+        data: [{
+          t: "2021-03-11",
+          y: 1985
+        },
+        {
+          t: "2021-03-18",
+          y: 1982
+        },
+        {
+          t: "2021-03-25",
+          y: 1990
+        },
+        {
+          t: "2021-04-25",
+          y: 1999
+        }
+        ],
+        backgroundColor: [
+          'rgba(0, 172, 238, 0.2)'
+        ],
+        borderColor: [
+          'rgba(0, 172, 238, 1)',
+        ],
+        borderWidth: 3
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          distribution: 'linear'
+        }]
+      }
+    }
+  });
+</script>
+<script>
+
+  var myCanvasInstagram = document.getElementById("myChartInstagram");
+  var ctxInstagram = myCanvasInstagram.getContext('2d');
+
+  var myChartTwitter = new Chart(ctxInstagram, {
+    type: 'line',
+    data: {
+      labels: ["2021-03-11", "2021-04-25"],
+      datasets: [{
+        label: 'Instagram',
+        data: [{
+          t: "2021-03-11",
+          y: 1623
+        },
+        {
+          t: "2021-03-18",
+          y: 1652
+        },
+        {
+          t: "2021-03-25",
+          y: 1720
+        },
+        {
+          t: "2021-04-25",
+          y: 1787
+        }
+        ],
+        backgroundColor: [
+          'rgba(193, 53, 132, 0.2)'
+        ],
+        borderColor: [
+          'rgba(193, 53, 132, 1)',
+        ],
+        borderWidth: 5
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          distribution: 'linear'
+        }]
+      }
+    }
+  });
+</script>
+<script>
+
+  var myCanvasMailchimp = document.getElementById("myChartMailchimp");
+  var ctxMailchimp = myCanvasMailchimp.getContext('2d');
+
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+
+  var date = new Date();
+  date.setDate(date.getDate() - 1);
+
+
+  var myChartTwitter = new Chart(ctxMailchimp, {
+    type: 'line',
+    data: {
+      labels: [date, today],
+      datasets: [{
+        label: 'Mailchimp',
+        data: [{
+          t: "2021-03-11",
+          y: 8600
+        },
+        {
+          t: "2021-03-18",
+          y: 8625
+        },
+        {
+          t: "2021-03-25",
+          y: 8910
+        },
+        {
+          t: "2021-04-25",
+          y: 9051
+        }
+        ],
+        backgroundColor: [
+          'rgba(255, 224, 27, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 224, 27, 1)',
+        ],
+        borderWidth: 5
+      }]
+    },
+    options: {
+      scales: {
+        xAxes: [{
+          type: 'time',
+          distribution: 'linear'
+        }]
+      }
+    }
+  });
+</script>
 <script src="Assets/script/main.js"></script>
 
 </html>

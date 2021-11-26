@@ -4,9 +4,8 @@ body {
     font-family: montserrat;
 }
 
-.dark-mode {
-    background-color: black;
-    color: white;
+h2 {
+    margin: 3rem 0rem;
 }
 
 header {
@@ -20,7 +19,15 @@ main {
 footer {
     text-align: center;
     font-size: large;
-    margin: 1rem;
+}
+
+.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+.toggle-dark {
+    font-size: 12px;
 }
 
 .nav {
@@ -81,4 +88,22 @@ footer {
 
 .graphs-wrapper {
     margin: 2rem 0;
+}
+
+/**Tables**/
+
+.stats th, td {
+    padding: 2rem;
+}
+
+
+/*--------------------------------------------Media Queries */
+
+@media screen and (max-width: 576px) {
+    .logo {
+        font-size: 28px;
+    }
+
+     
+  
 }
