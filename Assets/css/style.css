@@ -93,9 +93,17 @@ footer {
 /**Tables**/
 
 .stats th, td {
-    padding: 2rem;
+    padding: 1rem;
 }
 
+.tableDate {
+    font-weight: bold;
+    padding: 1rem;
+}
+
+.inputFields {
+    width: 110px;
+}
 
 /*--------------------------------------------Media Queries */
 

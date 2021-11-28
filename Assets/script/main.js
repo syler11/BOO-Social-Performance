@@ -5,14 +5,15 @@ var yyyy = today.getFullYear();
 
 var date = new Date();
 date.setDate(date.getDate() - 30);
-document.getElementById("test").innerHTML = (date);
+document.getElementById("currentDate").innerHTML = (date);
+
+const FB = document.getElementById("FB");
+const Twitter = document.getElementById("Twitter");
+const Instagram = document.getElementById("Instagram");
+const Mailchimp = document.getElementById("Mailchimp");
 
 
 function graphChannels() {
-  const FB = document.getElementById("FB");
-  const Twitter = document.getElementById("Twitter");
-  const Instagram = document.getElementById("Instagram");
-  const Mailchimp = document.getElementById("Mailchimp");
   if (FB.style.display === "none",
     Twitter.style.display = "block",
     Instagram.style.display = "block",
@@ -24,11 +25,7 @@ function graphChannels() {
   }
 };
 
-function Facebook() {
-  const FB = document.getElementById("FB");
-  const Twitter = document.getElementById("Twitter");
-  const Instagram = document.getElementById("Instagram");
-  const Mailchimp = document.getElementById("Mailchimp");
+function Facebook() { 
   if (FB.style.display === "none") {
     FB.style.display = "block";
     Twitter.style.display = "none";
@@ -41,11 +38,7 @@ function Facebook() {
   }
 };
 
-function Twitter() {
-  const FB = document.getElementById("FB");
-  const Twitter = document.getElementById("Twitter");
-  const Instagram = document.getElementById("Instagram");
-  const Mailchimp = document.getElementById("Mailchimp");
+function Twit() {
   if (Twitter.style.display === "none") {
     Twitter.style.display = "block";
     FB.style.display = "none";
@@ -58,11 +51,7 @@ function Twitter() {
   }
 };
 
-function Instagram() {
-  const FB = document.getElementById("FB");
-  const Twitter = document.getElementById("Twitter");
-  const Instagram = document.getElementById("Instagram");
-  const Mailchimp = document.getElementById("Mailchimp");
+function Insta() {
   if (Instagram.style.display === "none") {
     Instagram.style.display = "block";
     FB.style.display = "none";
@@ -75,11 +64,7 @@ function Instagram() {
   }
 };
 
-function Mailchimp() {
-  const FB = document.getElementById("FB");
-  const Twitter = document.getElementById("Twitter");
-  const Instagram = document.getElementById("Instagram");
-  const Mailchimp = document.getElementById("Mailchimp");
+function Mailc() {
   if (Mailchimp.style.display === "none") {
     Mailchimp.style.display = "block";
     FB.style.display = "none";

@@ -63,18 +63,18 @@
               <div onclick="Facebook()">Facebook</div>
             </a></li>
           <li><a class="dropdown-item" href="#">
-              <div onclick="Twitter()">Twitter</div>
+              <div onclick="Twit()">Twitter</div>
             </a></li>
           <li><a class="dropdown-item" href="#">
-              <div onclick="Instagram()">Instagram</div>
+              <div onclick="Insta()">Instagram</div>
             </a></li>
           <li><a class="dropdown-item" href="#">
-              <div onclick="Mailchimp()">Mailchimp</div>
+              <div onclick="Mailc()">Mailchimp</div>
             </a></li>
         </ul>
       </div>
       <div class="period col-3">
-        <p id="test">0</p>
+        <p id="currentDate">0</p>
       </div>
     </div>
     <div class="graphs-wrapper">
@@ -153,7 +153,7 @@
       <hr>
     </div>
 
-    <div class="datatable">
+    <div class="stats">
       <!-- Data table with Show and Hide function -->
       <h2>Source Data</h2>
       <table id="sourceData">
@@ -231,12 +231,12 @@
             <td class="mailchimpStyle">6666</td>
           </tr>
           <tr>
-            <td class="tableDate">Add new</td>
-            <td class="fbStyle">Add new</td>
-            <td class="twitterStyle">Add new</td>
-            <td class="instaStyle">Add new</td>
-            <td class="mailchimpStyle">Add new</td>
-            <td><button>Submit</button></td>
+            <td class="tableDate"><input type="text" id="addNewDate" class="form-control text-center inputFields" placeholder="  /  /  "></td>
+            <td class="fbStyle"><input type="text" id="addFbValue" class="form-control inputFields" placeholder="Facebook"></td>
+            <td class="twitterStyle"><input type="text" id="addTwitterValue" class="form-control inputFields" placeholder="Twitter"></td>
+            <td class="instaStyle"><input type="text" id="addInstaValue" class="form-control inputFields" placeholder="Instagram"></td>
+            <td class="mailchimpStyle"><input type="text" id="addMailchimpValue" class="form-control inputFields" placeholder="Mailchimp"></td>
+            <td><button type="submit">Submit</button></td>
           </tr>
         </tbody>
       </table>
@@ -261,7 +261,7 @@
           <div class="form-group">
             <label for="messagebox">Message</label>
             <textarea class="form-control" id="messagebox" rows="6"></textarea>
-            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#exampleModal">
+            <button type="submit">
               Send Message
             </button>
           </div>
@@ -420,19 +420,10 @@
   var myCanvasMailchimp = document.getElementById("myChartMailchimp");
   var ctxMailchimp = myCanvasMailchimp.getContext('2d');
 
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, '0');
-  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  var yyyy = today.getFullYear();
-
-  var date = new Date();
-  date.setDate(date.getDate() - 1);
-
-
   var myChartTwitter = new Chart(ctxMailchimp, {
     type: 'line',
     data: {
-      labels: [date, today],
+      labels: ["2021-03-11", "2021-04-25"],
       datasets: [{
         label: 'Mailchimp',
         data: [{
